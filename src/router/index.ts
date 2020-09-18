@@ -12,6 +12,11 @@ const routes: RouteConfig[] = [
     component: Home,
   },
   {
+    path: '/show-all-on-map',
+    name: 'ShowAllOnMap',
+    component: () => import('../views/ShowAllOnMap.vue'),
+  },
+  {
     path: '/about',
     name: 'About',
     // route level code-splitting

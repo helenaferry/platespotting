@@ -1,10 +1,10 @@
 <template>
-<div class="home">
+<div class="show-all-on-map">
     <PageLayout>
         <div slot="main">
             <plate-spottings-data-provider>
                 <div slot-scope="dataProvider">
-                    <plate-spotting v-for="plateSpotting in dataProvider.plateSpottings" v-bind="plateSpotting" />
+					<map-with-markers :locations="dataProvider.plateSpottings.map(plateSpotting => plateSpotting.location)" :zoom="6" height="500px"/>
                 </div>
             </plate-spottings-data-provider>
         </div>
@@ -20,7 +20,7 @@ import PlateSpotting from '@/components/PlateSpotting/PlateSpotting.vue';
 import MapWithMarkers from '@/components/MapWithMarkers/MapWithMarkers.vue';
 
 export default {
-    name: 'Home',
+    name: 'ShowAllOnMap',
     components: {
         PageLayout,
         PlateSpottingsDataProvider,
