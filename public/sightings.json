@@ -4,8 +4,8 @@
 		"plate": "001",
 		"date": "2018-07-15",
 		"location": {
-			"lat": "59.204458",
-			"long": "17.679655"
+			"Lat": 59.204458,
+			"Long": 17.679655
 		},
 		"note": "På väg till Gränna"
 	},
@@ -14,8 +14,8 @@
 		"plate": "002",
 		"date": "2018-07-23",
 		"location": {
-			"lat": "57.701719",
-			"long": "11.945754"
+			"Lat": 57.701719,
+			"Long": 11.945754
 		},
 		"note": "Göteborgs hamn, när vi just åkt av båten"
 	},
@@ -24,8 +24,8 @@
 		"plate": "003",
 		"date": "2018-08-09",
 		"location": {
-			"lat": "59.338432",
-			"long": "18.013761"
+			"Lat": 59.338432,
+			"Long": 18.013761
 		},
 		"note": "Utanför tunnelbanan, på väg till Grönan"
 	}

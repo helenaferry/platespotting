@@ -1,9 +1,9 @@
 export default class LocationModel {
-	Lat: String;
-	Long: String;
+	Lat: number;
+	Long: number;
 
 	constructor() {
-		this.Lat = '';
-		this.Long = '';
+		this.Lat = 0;
+		this.Long = 0;
 	}
 }

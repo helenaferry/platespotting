@@ -3,12 +3,14 @@
     <p>{{plate}}</p>
 	<p>{{date}}</p>
 	<p>{{note}}</p>
+	<map-with-markers :locations="[location]"></map-with-markers>
 </div>
 </template>
 
 <script lang="ts">
 import Vue from 'vue';
 import LocationModel from '../../models/LocationModel';
+import MapWithMarkers from '../MapWithMarkers/MapWithMarkers.vue'
 
 export default Vue.extend({
     name: 'Sighting',
@@ -27,16 +29,14 @@ export default Vue.extend({
 		},
         location: {
 			type: Object,
-			default: {
-				Lat: '59.204458',
-				Long: '17.679655'
-			}
+			default: () => {}
 		},
         note: {
 			type: String,
 			default: 'Såg den från bussen'
 		}
     },
+	components: { MapWithMarkers }
 });
 </script>
 

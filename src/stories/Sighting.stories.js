@@ -1,7 +1,7 @@
 import Sighting from '../components/Sighting/Sighting.vue';
 
 export default {
-  title: 'Example/Sighting',
+  title: 'Platespotting/Sighting',
   component: Sighting,
 };
 

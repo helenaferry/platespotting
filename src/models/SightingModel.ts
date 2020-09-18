@@ -1,18 +1,18 @@
 import LocationModel from './LocationModel';
 
 export default class SightingModel {
-	Id: String;
-	Plate: String;
-	Date: String;
-	Location: LocationModel;
-	Note: String;
+	id: String;
+	plate: String;
+	date: String;
+	location: LocationModel;
+	note: String;
 
 
 	constructor() {
-		this.Id = '';
-		this.Plate = '';
-		this.Date = '';
-		this.Location = { Lat: '', Long: ''};
-		this.Note = '';
+		this.id = '';
+		this.plate = '';
+		this.date = '';
+		this.location = { Lat: 0, Long: 0 };
+		this.note = '';
 	}
 }

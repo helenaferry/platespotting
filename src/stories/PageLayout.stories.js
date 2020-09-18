@@ -1,7 +1,7 @@
 import PageLayout from '../components/PageLayout/PageLayout.vue';
 
 export default {
-  title: 'Example/PageLayout',
+  title: 'Platespotting/PageLayout',
   component: PageLayout,
 };
 
