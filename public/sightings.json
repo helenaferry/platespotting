@@ -1,0 +1,32 @@
+[
+	{
+		"id": "teamferry001",
+		"plate": "001",
+		"date": "2018-07-15",
+		"location": {
+			"lat": "59.204458",
+			"long": "17.679655"
+		},
+		"note": "På väg till Gränna"
+	},
+	{
+		"id": "teamferry002",
+		"plate": "002",
+		"date": "2018-07-23",
+		"location": {
+			"lat": "57.701719",
+			"long": "11.945754"
+		},
+		"note": "Göteborgs hamn, när vi just åkt av båten"
+	},
+	{
+		"id": "teamferry003",
+		"plate": "003",
+		"date": "2018-08-09",
+		"location": {
+			"lat": "59.338432",
+			"long": "18.013761"
+		},
+		"note": "Utanför tunnelbanan, på väg till Grönan"
+	}
+]
