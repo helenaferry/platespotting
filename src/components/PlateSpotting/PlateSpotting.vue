@@ -1,5 +1,5 @@
 <template>
-<div class="sighting">
+<div class="plate-spotting">
     <p>{{plate}}</p>
 	<p>{{date}}</p>
 	<p>{{note}}</p>
@@ -13,7 +13,7 @@ import LocationModel from '../../models/LocationModel';
 import MapWithMarkers from '../MapWithMarkers/MapWithMarkers.vue'
 
 export default Vue.extend({
-    name: 'Sighting',
+    name: 'PlateSpotting',
     props: {
         id: {
             type: String,
@@ -43,11 +43,10 @@ export default Vue.extend({
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 
 <style scoped>
-.sighting {
+.plate-spotting {
 	border: 1px solid black;
 	display: inline-block;
 	border-radius: 15px;
 	padding: 10px 30px;
 }
-
 </style>

@@ -1,9 +1,9 @@
 
 export default {
-    name: 'SightingsDataProvider',
+    name: 'PlateSpottingsDataProvider',
     computed: {
-		sightings: function () {
-			return this.$store.getters['sightings/sightings'];
+		plateSpottings: function () {
+			return this.$store.getters['plateSpottings/plateSpottings'];
 		}
 	},
     render() {
@@ -12,12 +12,12 @@ export default {
         }
 
         const slotScope = {
-            sightings: this.sightings,
+            plateSpottings: this.plateSpottings,
         };
 
         return this.$scopedSlots.default(slotScope);
     },
     created() {
-		this.$store.dispatch('sightings/fetchSightings');
+		this.$store.dispatch('plateSpottings/fetchPlateSpottings');
     }
 }

@@ -1,6 +1,6 @@
 import LocationModel from './LocationModel';
 
-export default class SightingModel {
+export default class PlateSpottingModel {
 	id: String;
 	plate: String;
 	date: String;

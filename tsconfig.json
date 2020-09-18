@@ -32,7 +32,7 @@
     "src/**/*.tsx",
     "src/**/*.vue",
     "tests/**/*.ts",
-    "tests/**/*.tsx", "src/dataproviders/SightingsDataProvider.js"
+    "tests/**/*.tsx", "src/dataproviders/PlateSpottingsDataProvider.js"
   ],
   "exclude": [
     "node_modules"

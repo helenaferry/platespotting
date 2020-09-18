@@ -2,12 +2,12 @@
 <div class="home">
     <PageLayout>
         <div slot="main">
-            <sightings-data-provider>
+            <plate-spottings-data-provider>
                 <div slot-scope="dataProvider">
-                    <sighting v-for="sighting in dataProvider.sightings" v-bind="sighting" />
-					<map-with-markers :locations="dataProvider.sightings.map(sightings => sightings.location)" :zoom="6" height="500px"/>
+                    <plate-spotting v-for="plateSpotting in dataProvider.plateSpottings" v-bind="plateSpotting" />
+					<map-with-markers :locations="dataProvider.plateSpottings.map(plateSpotting => plateSpotting.location)" :zoom="6" height="500px"/>
                 </div>
-            </sightings-data-provider>
+            </plate-spottings-data-provider>
         </div>
     </PageLayout>
 </div>
@@ -16,16 +16,16 @@
 <script>
 // @ is an alias to /src
 import PageLayout from '@/components/PageLayout/PageLayout.vue'
-import SightingsDataProvider from '../dataproviders/SightingsDataProvider';
-import Sighting from '@/components/Sighting/Sighting.vue';
+import PlateSpottingsDataProvider from '../dataproviders/PlateSpottingsDataProvider';
+import PlateSpotting from '@/components/PlateSpotting/PlateSpotting.vue';
 import MapWithMarkers from '@/components/MapWithMarkers/MapWithMarkers.vue';
 
 export default {
     name: 'Home',
     components: {
         PageLayout,
-        SightingsDataProvider,
-		Sighting,
+        PlateSpottingsDataProvider,
+		PlateSpotting,
 		MapWithMarkers
     }
 }
