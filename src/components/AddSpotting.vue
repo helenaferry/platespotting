@@ -5,7 +5,7 @@
         <number-plate :plate="plate" />
     </section>
     <b-collapse v-model="isOpen" aria-id="contentIdForA11y1">
-        <button class="button is-primary is-rounded" slot="trigger" aria-controls="contentIdForA11y1">Hittad!</button>
+        <b-button class="button is-primary is-rounded" slot="trigger" aria-controls="contentIdForA11y1">Hittad!</b-button>
         <div class="columns is-centered mx-4">
 		<div class="column is-6">
             <form @submit.prevent="save" class="has-text-left">
@@ -44,21 +44,9 @@
 <script lang="ts">
 import Vue from 'vue';
 import NumberPlate from '@/components/NumberPlate.vue';
-import {
-    Field,
-    Datepicker,
-    Checkbox,
-    Input,
-    Button,
-    Collapse
-} from 'buefy'
+import Buefy from 'buefy'
 
-Vue.use(Field);
-Vue.use(Datepicker);
-Vue.use(Checkbox);
-Vue.use(Input);
-Vue.use(Button);
-Vue.use(Collapse);
+Vue.use(Buefy);
 
 export default Vue.extend({
     name: 'AddSpotting',
