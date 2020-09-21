@@ -20,7 +20,7 @@ import {
     LMarker
 } from 'vue2-leaflet';
 
-import LocationModel from '../../models/LocationModel';
+import LocationModel from '../models/LocationModel';
 
 type D = Icon.Default & {
     _getIconUrl ? : string;

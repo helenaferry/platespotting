@@ -14,10 +14,10 @@
 
 <script>
 // @ is an alias to /src
-import PageLayout from '@/components/PageLayout/PageLayout.vue'
+import PageLayout from '@/components/PageLayout.vue'
 import PlateSpottingsDataProvider from '../dataproviders/PlateSpottingsDataProvider';
-import PlateSpotting from '@/components/PlateSpotting/PlateSpotting.vue';
-import MapWithMarkers from '@/components/MapWithMarkers/MapWithMarkers.vue';
+import PlateSpotting from '@/components/PlateSpotting.vue';
+import MapWithMarkers from '@/components/MapWithMarkers.vue';
 
 export default {
     name: 'ShowAllOnMap',
