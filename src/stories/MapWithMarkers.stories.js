@@ -8,7 +8,7 @@ export default {
 
 const Template = () => ({
   components: { MapWithMarkers },
-  template: '<map-with-markers></map-with-markers>',
+  template: '<map-with-markers :locations="[{Lat: 59.386473, Long: 14.472318}]" height="400px"></map-with-markers>',
 });
 
 export const Default = Template.bind({});

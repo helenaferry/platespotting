@@ -11,7 +11,7 @@
 import Vue from 'vue';
 import LocationModel from '../../models/LocationModel';
 import MapWithMarkers from '../MapWithMarkers/MapWithMarkers.vue'
-import NumberPlate from '@/components/NumberPlate/NumberPlate.vue';
+import NumberPlate from '../../components/NumberPlate/NumberPlate.vue';
 
 export default Vue.extend({
     name: 'PlateSpotting',

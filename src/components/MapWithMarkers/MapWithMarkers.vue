@@ -2,7 +2,7 @@
 <div class="map-with-markers">
     <l-map :zoom="zoom" :center="center" :options="mapOptions" :style="`height:${height};`">
         <l-tile-layer :url="url" :attribution="attribution" />
-        <l-marker v-for="location in locations" v-if="location && location.Lat && location.Long" :lat-lng="createLatLong(location)"></l-marker>
+        <l-marker v-for="location in locations" v-if="location && location.Lat && location.Long" :lat-lng="createLatLong(location)" :key="location.Lat+','+location.Long"></l-marker>
     </l-map>
 </div>
 </template>

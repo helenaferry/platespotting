@@ -6,7 +6,7 @@
                 <div slot-scope="dataProvider">
 					<a href="#" @click="dataProvider.toggleSort">Flippa sortering</a> - 
 					<a href="#" @click="toggleMap">{{toggleMapText}}</a>
-                    <plate-spotting v-for="plateSpotting in dataProvider.plateSpottings" v-bind="plateSpotting" :showMap="showMap"/>
+                    <plate-spotting v-for="plateSpotting in dataProvider.plateSpottings" :key="plateSpotting.id" v-bind="plateSpotting" :showMap="showMap"/>
                 </div>
             </plate-spottings-data-provider>
         </div>
