@@ -2,7 +2,7 @@
 <div class="map-with-markers">
     <l-map :zoom="zoom" :center="center" :options="mapOptions" :style="`height:${height};`">
         <l-tile-layer :url="url" :attribution="attribution" />
-        <l-marker v-for="location in locations" :lat-lng="createLatLong(location)"></l-marker>
+        <l-marker v-for="location in locations" v-if="location && location.Lat && location.Long" :lat-lng="createLatLong(location)"></l-marker>
     </l-map>
 </div>
 </template>
@@ -42,7 +42,7 @@ export default Vue.extend({
         },
         height: {
             type: String,
-            default: '200px'
+            default: '150px'
         },
         zoom: {
             type: Number,
@@ -70,7 +70,9 @@ export default Vue.extend({
             let firstLocation = this.locations[0] as LocationModel;
             if (firstLocation && firstLocation.Lat && firstLocation.Long) {
                 return latLng(firstLocation.Lat, firstLocation.Long);
-            }
+            } else {
+				return latLng(59.386473, 14.472318); // Random ok location for now but fix TODO thingie and remove....
+			}
         }
     },
     methods: {
@@ -88,6 +90,6 @@ export default Vue.extend({
 
 <style scoped>
 .map-with-markers {
-    border: 1px solid black;
+
 }
 </style>

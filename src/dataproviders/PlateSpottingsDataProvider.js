@@ -1,9 +1,26 @@
 
 export default {
     name: 'PlateSpottingsDataProvider',
-    computed: {
+    computed: { /* TODO mapGetters? */
 		plateSpottings: function () {
 			return this.$store.getters['plateSpottings/plateSpottings'];
+		},
+		nextPlate: function () {
+			return this.$store.getters['plateSpottings/nextPlate'];
+		}
+	},
+	methods: {
+        addPlateSpotting({ plate, date, seenBy, note  }) {
+            this.$store.dispatch('plateSpottings/addPlateSpotting', {
+                plate: plate,
+                date: date,
+				seenBy: seenBy,
+				note: note
+            });
+		},
+		toggleSort() {
+			console.log('Toggle sort');
+			this.$store.dispatch('plateSpottings/toggleSort');
 		}
 	},
     render() {
@@ -12,7 +29,10 @@ export default {
         }
 
         const slotScope = {
-            plateSpottings: this.plateSpottings,
+			plateSpottings: this.plateSpottings,
+			nextPlate: this.nextPlate,
+			addPlateSpotting: this.addPlateSpotting,
+			toggleSort: this.toggleSort,
         };
 
         return this.$scopedSlots.default(slotScope);

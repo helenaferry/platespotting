@@ -4,7 +4,7 @@
         <div slot="main">
             <plate-spottings-data-provider>
                 <div slot-scope="dataProvider">
-                    <plate-spotting v-for="plateSpotting in dataProvider.plateSpottings" v-bind="plateSpotting" />
+					<add-spotting :plate="dataProvider.nextPlate" @create="dataProvider.addPlateSpotting" />
                 </div>
             </plate-spottings-data-provider>
         </div>
@@ -15,17 +15,15 @@
 <script>
 // @ is an alias to /src
 import PageLayout from '@/components/PageLayout/PageLayout.vue'
-import PlateSpottingsDataProvider from '../dataproviders/PlateSpottingsDataProvider';
-import PlateSpotting from '@/components/PlateSpotting/PlateSpotting.vue';
-import MapWithMarkers from '@/components/MapWithMarkers/MapWithMarkers.vue';
+import PlateSpottingsDataProvider from '@/dataproviders/PlateSpottingsDataProvider';
+import AddSpotting from '@/components/AddSpotting/AddSpotting.vue'
 
 export default {
     name: 'Home',
     components: {
         PageLayout,
         PlateSpottingsDataProvider,
-		PlateSpotting,
-		MapWithMarkers
-    }
+		AddSpotting
+    },
 }
 </script>
