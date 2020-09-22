@@ -3,10 +3,8 @@
     <PageLayout>
         <div slot="main">
             <plate-spottings-data-provider>
-                <div slot-scope="dataProvider" class="has-text-centered">
-                    <p>Jag letar efter</p>
-                    <number-plate :plate="dataProvider.nextPlate" />
-					<b-button @click="goToAdd" class="is-primary mt-3" rounded>Hittad!</b-button>
+                <div slot-scope="dataProvider">
+                    <add-form :plate="dataProvider.nextPlate" @create="dataProvider.addPlateSpotting" />
                 </div>
             </plate-spottings-data-provider>
         </div>
@@ -18,19 +16,14 @@
 // @ is an alias to /src
 import PageLayout from '../components/PageLayout.vue';
 import PlateSpottingsDataProvider from '../dataproviders/PlateSpottingsDataProvider';
-import NumberPlate from '../components/NumberPlate.vue';
+import AddForm from '../components/AddForm.vue';
 
 export default {
-    name: 'Home',
+    name: 'AddSpotting',
     components: {
         PageLayout,
         PlateSpottingsDataProvider,
-        NumberPlate,
+        AddForm,
     },
-	methods: {
-		goToAdd() {
-			this.$router.push('add');
-		}
-	}
 };
 </script>

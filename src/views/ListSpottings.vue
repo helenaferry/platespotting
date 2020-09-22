@@ -21,7 +21,7 @@ import PlateSpottingsDataProvider from '../dataproviders/PlateSpottingsDataProvi
 import PlateSpotting from '../components/PlateSpotting.vue';
 
 export default {
-    name: 'Home',
+    name: 'ListSpottings',
     components: {
         PageLayout,
         PlateSpottingsDataProvider,

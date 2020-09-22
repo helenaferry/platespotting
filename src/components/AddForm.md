@@ -5,5 +5,5 @@ Showing the next plate and a form to add a spotting.
 A random marker:
 
 ```jsx
-<add-spotting :plate="132"></add-spotting>
+<add-form :plate="132"></add-form>
 ```

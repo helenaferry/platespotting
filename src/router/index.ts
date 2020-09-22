@@ -12,15 +12,21 @@ const routes: RouteConfig[] = [
     component: Home,
   },
   {
-    path: '/spottings',
-    name: 'Spottings',
-    component: () => import('../views/Spottings.vue'),
+    path: '/add',
+    name: 'AddSpotting',
+    component: () => import('../views/AddSpotting.vue'),
   },
   {
-    path: '/show-all-on-map',
+    path: '/list',
+    name: 'ListSpottings',
+    component: () => import('../views/ListSpottings.vue'),
+  },
+  {
+    path: '/map',
     name: 'ShowAllOnMap',
     component: () => import('../views/ShowAllOnMap.vue'),
   },
+
 ];
 
 const router = new VueRouter({

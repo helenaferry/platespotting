@@ -4,8 +4,9 @@
 
     <menu class="has-text-centered">
         <router-link to="/">Start</router-link> -
-        <router-link to="spottings">Visa sedda</router-link> -
-        <router-link to="show-all-on-map">Visa alla på karta</router-link>
+		<router-link to="add">Lägg till</router-link> -
+        <router-link to="list">Visa sedda</router-link> -
+        <router-link to="map">Visa alla på karta</router-link>
     </menu>
     </section>
     <div class="container">
