@@ -4,9 +4,9 @@
         <div slot="main">
             <plate-spottings-data-provider>
                 <div slot-scope="dataProvider">
-					<a href="#" @click="dataProvider.toggleSort">Flippa sortering</a> - 
-					<a href="#" @click="toggleMap">{{toggleMapText}}</a>
-                    <plate-spotting v-for="plateSpotting in dataProvider.plateSpottings" :key="plateSpotting.id" v-bind="plateSpotting" :showMap="showMap"/>
+                    <a href="#" @click="dataProvider.toggleSort">Flippa sortering</a> -
+                    <a href="#" @click="toggleMap">{{toggleMapText}}</a>
+                    <plate-spotting v-for="plateSpotting in dataProvider.plateSpottings" :key="plateSpotting.id" v-bind="plateSpotting" :showMap="showMap" />
                 </div>
             </plate-spottings-data-provider>
         </div>
@@ -16,7 +16,7 @@
 
 <script>
 // @ is an alias to /src
-import PageLayout from '@/components/PageLayout.vue'
+import PageLayout from '@/components/PageLayout.vue';
 import PlateSpottingsDataProvider from '@/dataproviders/PlateSpottingsDataProvider';
 import PlateSpotting from '@/components/PlateSpotting.vue';
 
@@ -25,22 +25,22 @@ export default {
     components: {
         PageLayout,
         PlateSpottingsDataProvider,
-		PlateSpotting
+        PlateSpotting,
     },
-	data() {
+    data() {
         return {
-            showMap: false
-        }
+            showMap: false,
+        };
     },
-	computed: {
-        toggleMapText: function () {
+    computed: {
+        toggleMapText() {
             return this.showMap ? 'Dölj karta' : 'Visa karta';
-        }
+        },
     },
-	methods: {
+    methods: {
         toggleMap() {
-			this.showMap = !this.showMap;
-        }
-    }
-}
+            this.showMap = !this.showMap;
+        },
+    },
+};
 </script>

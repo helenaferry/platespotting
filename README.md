@@ -30,7 +30,12 @@ npm run lint
 npm run test:unit
 ```
 
-### Run styleguide
+### Run Styleguidist styleguide
+```
+npm run styleguide
+```
+
+### Run Storybook which isn't working great....
 ```
 npm run storybook
 ```

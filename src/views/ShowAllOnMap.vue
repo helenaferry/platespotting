@@ -4,7 +4,7 @@
         <div slot="main">
             <plate-spottings-data-provider>
                 <div slot-scope="dataProvider">
-					<map-with-markers :locations="dataProvider.plateSpottings.map(plateSpotting => plateSpotting.location)" :zoom="6" height="500px"/>
+                    <map-with-markers :locations="dataProvider.plateSpottings.map(plateSpotting => plateSpotting.location)" :zoom="6" height="500px" />
                 </div>
             </plate-spottings-data-provider>
         </div>
@@ -14,7 +14,7 @@
 
 <script>
 // @ is an alias to /src
-import PageLayout from '@/components/PageLayout.vue'
+import PageLayout from '@/components/PageLayout.vue';
 import PlateSpottingsDataProvider from '../dataproviders/PlateSpottingsDataProvider';
 import PlateSpotting from '@/components/PlateSpotting.vue';
 import MapWithMarkers from '@/components/MapWithMarkers.vue';
@@ -24,8 +24,8 @@ export default {
     components: {
         PageLayout,
         PlateSpottingsDataProvider,
-		PlateSpotting,
-		MapWithMarkers
-    }
-}
+        PlateSpotting,
+        MapWithMarkers,
+    },
+};
 </script>

@@ -1,0 +1,38 @@
+[
+	{
+		"id": "teamferry001",
+		"plate": 1,
+		"date": "2018-07-15",
+		"location": {
+			"Lat": 59.204458,
+			"Long": 17.679655,
+			"Text": null
+		},
+		"seenBy": ["Jonas", "Helena", "Sander", "Ava"],
+		"note": "På väg till Gränna"
+	},
+	{
+		"id": "teamferry002",
+		"plate": 2,
+		"date": "2018-07-23",
+		"location": {
+			"Lat": 57.701719,
+			"Long": 11.945754,
+			"Text": null
+		},
+		"seenBy": ["Jonas", "Helena", "Sander", "Ava"],
+		"note": "Göteborgs hamn, när vi just åkt av båten"
+	},
+	{
+		"id": "teamferry003",
+		"plate": 3,
+		"date": "2018-08-09",
+		"location": {
+			"Lat": 59.338432,
+			"Long": 18.013761,
+			"Text": "Sankt Göransgatan 156, Stockholm"
+		},
+		"seenBy": ["Jonas", "Helena", "Sander", "Ava"],
+		"note": "Utanför tunnelbanan, på väg till Grönan"
+	}
+]

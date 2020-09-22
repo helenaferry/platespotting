@@ -47,3 +47,13 @@ export default Vue.extend({
     }
 });
 </script>
+
+<docs>
+
+## Examples
+
+
+```jsx
+<plate-spotting :plate="132"></plate-spotting>
+```
+</docs>

@@ -6,9 +6,11 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "test:unit": "vue-cli-service test:unit",
+    "build-storybook": "build-storybook",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "styleguide": "vue-cli-service styleguidist",
+    "styleguide:build": "vue-cli-service styleguidist:build",
+    "test:unit": "vue-cli-service test:unit"
   },
   "dependencies": {
     "@types/leaflet": "^1.5.17",
@@ -37,6 +39,7 @@
     "babel-loader": "^8.1.0",
     "react-is": "^16.13.1",
     "typescript": "~3.9.3",
+    "vue-cli-plugin-styleguidist": "^4.32.3",
     "vue-template-compiler": "^2.6.11"
   }
 }

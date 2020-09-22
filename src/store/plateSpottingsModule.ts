@@ -22,7 +22,7 @@ const getters = { // TODO fix ts issues
 		return state.plateSpottings.sort((a: PlateSpottingModel, b: PlateSpottingModel) => (a.plate > b.plate) ? 1 : ((b.plate > a.plate) ? -1 : 0));
 	},
 	highestPlate: (state: any) => {
-		return Math.max(...state.plateSpottings.map((spotting : PlateSpottingModel) => spotting.plate));
+		return Math.max(...state.plateSpottings.map((spotting: PlateSpottingModel) => spotting.plate));
 	},
 	nextPlate: (state: any, getters: any) => {
 		return getters.highestPlate + 1;
@@ -52,7 +52,7 @@ const actions = {
 		// TODO Persist
 		commit('addPlateSpotting', newPlateSpotting);
 	},
-	toggleSort({commit} : any) {
+	toggleSort({ commit }: any) {
 		commit('toggleSort');
 	}
 };
@@ -76,5 +76,5 @@ export default {
 	state,
 	getters,
 	actions,
-	mutations
+	mutations,
 };
