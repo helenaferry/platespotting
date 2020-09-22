@@ -11,19 +11,19 @@
 import Vue from 'vue';
 import {
     latLng,
-    Icon
-} from "leaflet";
+    Icon,
+} from 'leaflet';
 
 import {
     LMap,
     LTileLayer,
-    LMarker
+    LMarker,
 } from 'vue2-leaflet';
 
 import LocationModel from '../models/LocationModel';
 
 type D = Icon.Default & {
-    _getIconUrl ? : string;
+    _getIconUrl ?: string;
 };
 
 delete(Icon.Default.prototype as D)._getIconUrl;
@@ -38,21 +38,21 @@ export default Vue.extend({
     props: {
         locations: {
             type: Array,
-            default: () => []
+            default: () => [],
         },
         height: {
             type: String,
-            default: '150px'
+            default: '150px',
         },
         zoom: {
             type: Number,
-            default: 15
-        }
+            default: 15,
+        },
     },
     components: {
         LMap,
         LTileLayer,
-        LMarker
+        LMarker,
     },
     data() {
         return {
@@ -60,29 +60,29 @@ export default Vue.extend({
             attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors',
             currentZoom: 11.5,
             mapOptions: {
-                zoomSnap: 0.5
+                zoomSnap: 0.5,
             },
         };
     },
     computed: {
-        center: function () {
+        center() {
             // TODO Temporary, want to adjust bounds to current markers, how do this with vue2-leaflet?
-            let firstLocation = this.locations[0] as LocationModel;
+            const firstLocation = this.locations[0] as LocationModel;
             if (firstLocation && firstLocation.Lat && firstLocation.Long) {
                 return latLng(firstLocation.Lat, firstLocation.Long);
             } else {
-				return latLng(59.386473, 14.472318); // Random ok location for now but fix TODO thingie and remove....
-			}
-        }
+        return latLng(59.386473, 14.472318); // Random ok location for now but fix TODO thingie and remove....
+      }
+        },
     },
     methods: {
         createLatLong(location: LocationModel) {
             return latLng(location.Lat, location.Long);
-        }
+        },
     },
     created() {
 
-    }
+    },
 });
 </script>
 
@@ -93,16 +93,3 @@ export default Vue.extend({
 
 }
 </style>
-
-
-<docs>
-Leaflet map displaying an array of locations as markers.
-
-## Examples
-
-A couple of random marker:
-
-```jsx
-<map-with-markers :locations="[{Lat: 59.386473, Long: 14.472318}, {Lat: 59.387273, Long: 14.472918}]" height="400px"></map-with-markers>
-```
-</docs>

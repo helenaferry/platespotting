@@ -4,3 +4,4 @@ export const parameters = {
 }
 
 import 'buefy/dist/buefy.css';
+import "leaflet/dist/leaflet.css"

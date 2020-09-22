@@ -12,14 +12,14 @@ export default Vue.extend({
     props: {
         plate: {
             type: Number,
-            default: 0
+            default: 0,
         },
     },
     computed: {
-        plateDisplay: function () {
+        plateDisplay() {
             return this.plate.toString().padStart(3, '0');
-        }
-    }
+        },
+    },
 });
 </script>
 
@@ -36,18 +36,3 @@ export default Vue.extend({
 	margin: auto;
 }
 </style>
-
-
-<docs>
-## Examples
-
-```jsx
-<number-plate :plate="123"></number-plate>
-```
-
-Padded number:
-```jsx
-<number-plate :plate="8"></number-plate>
-```
-
-</docs>

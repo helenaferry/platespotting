@@ -14,9 +14,9 @@
 
 <script>
 // @ is an alias to /src
-import PageLayout from '@/components/PageLayout.vue';
-import PlateSpottingsDataProvider from '@/dataproviders/PlateSpottingsDataProvider';
-import AddSpotting from '@/components/AddSpotting.vue';
+import PageLayout from '../components/PageLayout.vue';
+import PlateSpottingsDataProvider from '../dataproviders/PlateSpottingsDataProvider';
+import AddSpotting from '../components/AddSpotting.vue';
 
 export default {
     name: 'Home',

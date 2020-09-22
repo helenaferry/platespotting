@@ -7,7 +7,7 @@ export default {
 
 const Template = () => ({
   components: { AddSpotting },
-  template: '<add-spotting></add-spotting>',
+  template: '<add-spotting :plate="3"></add-spotting>',
 });
 
 export const Default = Template.bind({});

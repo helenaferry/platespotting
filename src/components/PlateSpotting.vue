@@ -9,51 +9,41 @@
 
 <script lang="ts">
 import Vue from 'vue';
-import LocationModel from '@/models/LocationModel';
-import MapWithMarkers from '@/components/MapWithMarkers.vue'
-import NumberPlate from '@/components/NumberPlate.vue';
+import LocationModel from '../models/LocationModel';
+import MapWithMarkers from './MapWithMarkers.vue';
+import NumberPlate from './NumberPlate.vue';
 
 export default Vue.extend({
     name: 'PlateSpotting',
     props: {
         id: {
             type: String,
-            default: 'someId'
+            default: 'someId',
         },
         plate: {
             type: Number,
-            default: 0
+            default: 0,
         },
         date: {
             type: String,
-            default: '2020-09-18'
+            default: '2020-09-18',
         },
         location: {
             type: Object,
-            default: () => {}
+            default: () => {},
         },
         note: {
             type: String,
-            default: 'Såg den från bussen'
+            default: 'Såg den från bussen',
         },
-		showMap: {
-			type: Boolean,
-			default: false
-		}
+    showMap: {
+      type: Boolean,
+      default: false,
+    },
     },
     components: {
         MapWithMarkers,
-		NumberPlate
-    }
+    NumberPlate,
+    },
 });
 </script>
-
-<docs>
-
-## Examples
-
-
-```jsx
-<plate-spotting :plate="132"></plate-spotting>
-```
-</docs>

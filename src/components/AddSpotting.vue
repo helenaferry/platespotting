@@ -43,8 +43,8 @@
 
 <script lang="ts">
 import Vue from 'vue';
-import NumberPlate from '@/components/NumberPlate.vue';
-import Buefy from 'buefy'
+import NumberPlate from '../components/NumberPlate.vue';
+import Buefy from 'buefy';
 
 Vue.use(Buefy);
 
@@ -53,23 +53,23 @@ export default Vue.extend({
     props: {
         plate: {
             type: Number,
-            default: 0
+            default: 0,
         },
         teamEffort: {
             type: Boolean,
-            default: true
-        }
+            default: true,
+        },
     },
     data() {
         return {
             isOpen: false,
             date: new Date(),
             seenBy: [],
-            note: ''
-        }
+            note: '',
+        };
     },
     components: {
-        NumberPlate
+        NumberPlate,
     },
     methods: {
         save() {
@@ -77,27 +77,16 @@ export default Vue.extend({
             console.log('Seen by: ', this.seenBy);
             console.log('Note: ', this.note);
 
-            //if (teamEffort && this.seenBy.length)
+            // if (teamEffort && this.seenBy.length)
 
             this.$emit('create', {
                 plate: this.plate,
                 date: this.date,
                 seenBy: this.seenBy,
-                note: this.note
+                note: this.note,
             });
             this.isOpen = false;
-        }
-    }
+        },
+    },
 });
 </script>
-<docs>
-Showing the next plate and a form to add a spotting.
-
-## Examples
-
-A random marker:
-
-```jsx
-<add-spotting :plate="132"></add-spotting>
-```
-</docs>

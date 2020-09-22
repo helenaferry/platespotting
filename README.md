@@ -35,10 +35,21 @@ npm run test:unit
 npm run styleguide
 ```
 
-### Run Storybook which isn't working great....
+### Build Styleguidist styleguide
+```
+npm run styleguide:build
+```
+
+### Run Storybook styleguide
 ```
 npm run storybook
 ```
+
+### Build Storybook styleguide
+```
+npm run build-storybook
+```
+
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).

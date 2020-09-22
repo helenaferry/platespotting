@@ -1,9 +1,11 @@
 
+/* STYLEGUIDIST CONFIG */
+
 const path = require('path');
 module.exports = {
 	// set your styleguidist configuration here
 	title: 'Platespotting Style Guide',
-	// components: 'src/components/**/[A-Z]*.vue',
+	//components: 'src/components/[A-Z]*.vue',
 	// defaultExample: true,
 	// sections: [
 	//   {

@@ -1,11 +1,11 @@
 export default class LocationModel {
-	Lat: number;
-	Long: number;
-	Text: String;
+  public Lat: number;
+  public Long: number;
+  public Text: String;
 
-	constructor() {
-		this.Lat = 0;
-		this.Long = 0;
-		this.Text = '';
-	}
+  constructor() {
+    this.Lat = 0;
+    this.Long = 0;
+    this.Text = '';
+  }
 }
