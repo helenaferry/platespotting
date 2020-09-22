@@ -1,4 +1,4 @@
-import PageLayout from '../components/PageLayout/PageLayout.vue';
+import PageLayout from '../components/PageLayout.vue';
 
 export default {
   title: 'Platespotting/PageLayout',

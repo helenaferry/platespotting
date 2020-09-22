@@ -1,4 +1,4 @@
-import AddSpotting from '../components/AddSpotting/AddSpotting.vue';
+import AddSpotting from '../components/AddSpotting.vue';
 
 export default {
   title: 'Platespotting/Add spotting',

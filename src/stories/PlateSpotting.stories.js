@@ -1,4 +1,4 @@
-import PlateSpotting from '../components/PlateSpotting/PlateSpotting.vue';
+import PlateSpotting from '../components/PlateSpotting.vue';
 
 export default {
   title: 'Platespotting/PlateSpotting',

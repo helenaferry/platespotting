@@ -1,4 +1,4 @@
-import MapWithMarkers from '../components/MapWithMarkers/MapWithMarkers.vue';
+import MapWithMarkers from '../components/MapWithMarkers.vue';
 import "leaflet/dist/leaflet.css"
 
 export default {
