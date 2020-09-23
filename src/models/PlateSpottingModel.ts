@@ -13,7 +13,7 @@ export default class PlateSpottingModel {
     this.id = '';
     this.plate = 0;
     this.date = '';
-    this.location = { Lat: 0, Long: 0, Text: '' };
+    this.location = { Lat: 0, Lng: 0, Text: '' };
     this.note = '';
     this.seenBy = [];
   }

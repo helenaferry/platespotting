@@ -2,7 +2,7 @@
 <div class="map-with-markers">
     <l-map :zoom="zoom" :center="center" :options="mapOptions" :style="`height:${height};`">
         <l-tile-layer :url="url" :attribution="attribution" />
-        <l-marker v-for="(location, index) in locations" v-if="location && location.Lat && location.Lng" :lat-lng="createLatLng(location)" :key="index"></l-marker>
+        <l-marker :lat-lng="center" :draggable="true" @update:latLng="updateLocation"></l-marker>
     </l-map>
 </div>
 </template>
@@ -23,7 +23,7 @@ import {
 import LocationModel from '../models/LocationModel';
 
 type D = Icon.Default & {
-    _getIconUrl ?: string;
+    _getIconUrl ? : string;
 };
 
 delete(Icon.Default.prototype as D)._getIconUrl;
@@ -34,7 +34,7 @@ Icon.Default.mergeOptions({
 });
 
 export default Vue.extend({
-    name: 'MapWithMarkers',
+    name: 'MapCurrentLocation',
     props: {
         locations: {
             type: Array,
@@ -42,7 +42,7 @@ export default Vue.extend({
         },
         height: {
             type: String,
-            default: '150px',
+            default: '250px',
         },
         zoom: {
             type: Number,
@@ -62,34 +62,36 @@ export default Vue.extend({
             mapOptions: {
                 zoomSnap: 0.5,
             },
+            lat: 0,
+            lng: 0,
         };
     },
     computed: {
         center() {
-            // TODO Temporary, want to adjust bounds to current markers, how do this with vue2-leaflet?
-            const firstLocation = this.locations[0] as LocationModel;
-            if (firstLocation && firstLocation.Lat && firstLocation.Lng) {
-                return latLng(firstLocation.Lat, firstLocation.Lng);
-            } else {
-        return latLng(59.386473, 14.472318); // Random ok location for now but fix TODO thingie and remove....
-      }
-        },
+            return latLng(this.$data.lat, this.$data.lng);
+        }
     },
     methods: {
-        createLatLng(location: LocationModel) {
-            return latLng(location.Lat, location.Lng);
+        updateLocation(location : any) {
+			if (!location || !location.lat || !location.lng) return;
+			let newLocation = new LocationModel();
+			newLocation.Lat = location.lat;
+			newLocation.Lng = location.lng;
+            this.$emit('updateLocation', newLocation);
         },
     },
-    created() {
-
+    mounted() {
+        //do we support geolocation
+        if (!("geolocation" in navigator)) {
+            return;
+        }
+        // get position
+        navigator.geolocation.getCurrentPosition(
+            pos => {
+                this.$data.lat = pos.coords.latitude;
+                this.$data.lng = pos.coords.longitude;
+            }
+        );
     },
 });
 </script>
-
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-
-<style scoped>
-.map-with-markers {
-
-}
-</style>

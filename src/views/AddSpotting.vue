@@ -13,17 +13,20 @@
 </template>
 
 <script>
-// @ is an alias to /src
+import Vue from 'vue';
 import PageLayout from '../components/PageLayout.vue';
 import PlateSpottingsDataProvider from '../dataproviders/PlateSpottingsDataProvider';
 import AddForm from '../components/AddForm.vue';
+import Buefy from 'buefy';
 
-export default {
+Vue.use(Buefy);
+
+export default Vue.extend({
     name: 'AddSpotting',
     components: {
         PageLayout,
         PlateSpottingsDataProvider,
         AddForm,
     },
-};
+});
 </script>

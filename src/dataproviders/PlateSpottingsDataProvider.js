@@ -10,16 +10,16 @@ export default {
 		}
 	},
 	methods: {
-        addPlateSpotting({ plate, date, seenBy, note  }) {
+        addPlateSpotting({ plate, date, location, seenBy, note  }) {
             this.$store.dispatch('plateSpottings/addPlateSpotting', {
                 plate: plate,
-                date: date,
+				date: date,
+				location: location,
 				seenBy: seenBy,
 				note: note
             });
 		},
 		toggleSort() {
-			console.log('Toggle sort');
 			this.$store.dispatch('plateSpottings/toggleSort');
 		}
 	},
