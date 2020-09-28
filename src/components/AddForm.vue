@@ -7,21 +7,24 @@
         <div class="columns is-centered mx-4">
             <div class="column is-6">
                 <form @submit.prevent="save" class="has-text-left">
-                    <b-field label="Datum">
-                        <b-datepicker placeholder="Skriv eller välj ett datum..." v-model="date" icon="calendar-today" locale="sv-SE" editable required>
-                        </b-datepicker>
-                    </b-field>
-                    <map-current-location @updateLocation="updateLocation"></map-current-location>
+
+                    <label for="dateField" class="has-text-weight-bold">Datum</label>
+                    <b-datepicker id="dateField" placeholder="Skriv eller välj ett datum..." v-model="date" icon="calendar-today" locale="sv-SE" editable required>
+                    </b-datepicker>
+
+                    <label class="has-text-weight-bold">Plats</label>
+                    <p>Dra kartmarkören för att justera positionen. Du kan också skriva in egna värden för latitud och longitud.</p>
+                    <map-current-location :location="location" @updateLocation="updateLocation"></map-current-location>
+
                     <div class="columns" v-if="location">
                         <div class="column">
-                            <b-field label="Latitud">
-                                <b-input type="text" v-model="location.Lat"></b-input>
+                            <label class="has-text-weight-bold" for="latField">Latitud</label>
+                            <b-input type="number" id="latField" v-model="location.Lat"></b-input>
                             </b-field>
                         </div>
                         <div class="column">
-                            <b-field label="Longitud">
-                                <b-input type="text" v-model="location.Lng"></b-input>
-                            </b-field>
+                            <label class="has-text-weight-bold" for="lngField">Longitud</label>
+                            <b-input type="number" id="lngField" v-model="location.Lng"></b-input>
                         </div>
                     </div>
 
@@ -122,7 +125,7 @@ export default Vue.extend({
         resetSubmitted() {
             this.submitted = false;
         },
-        updateLocation(newLocation : LocationModel) {
+        updateLocation(newLocation: LocationModel) {
             this.location = newLocation;
         }
     },
@@ -133,7 +136,7 @@ export default Vue.extend({
 </script>
 
 <style scoped>
- .datepicker {
-     z-index: 10000;
- }
+.datepicker {
+    z-index: 10000;
+}
 </style>

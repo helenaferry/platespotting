@@ -1,14 +1,12 @@
-
+import {
+    mapGetters
+} from 'vuex';
 export default {
-    name: 'PlateSpottingsDataProvider',
-    computed: { /* TODO mapGetters? */
-		plateSpottings: function () {
-			return this.$store.getters['plateSpottings/plateSpottings'];
-		},
-		nextPlate: function () {
-			return this.$store.getters['plateSpottings/nextPlate'];
-		}
-	},
+	name: 'PlateSpottingsDataProvider',
+	computed: mapGetters('plateSpottings', {
+		plateSpottings: 'plateSpottings',
+		nextPlate: 'nextPlate',
+    }),
 	methods: {
         addPlateSpotting({ plate, date, location, seenBy, note  }) {
             this.$store.dispatch('plateSpottings/addPlateSpotting', {

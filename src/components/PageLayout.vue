@@ -6,7 +6,8 @@
         <router-link to="/">Start</router-link> -
 		<router-link to="add">Lägg till</router-link> -
         <router-link to="list">Visa sedda</router-link> -
-        <router-link to="map">Visa alla på karta</router-link>
+        <router-link to="map">Visa alla på karta</router-link> -
+		<router-link to="logout">Logga ut</router-link>
     </menu>
     </section>
     <div class="container">

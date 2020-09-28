@@ -36,9 +36,9 @@ Icon.Default.mergeOptions({
 export default Vue.extend({
     name: 'MapCurrentLocation',
     props: {
-        locations: {
-            type: Array,
-            default: () => [],
+        location: {
+            type: LocationModel,
+            default: () => {},
         },
         height: {
             type: String,
@@ -71,12 +71,21 @@ export default Vue.extend({
             return latLng(this.$data.lat, this.$data.lng);
         }
     },
+    watch: {
+        location: {
+            deep: true,
+            handler(value) {
+                this.$data.lat = value.Lat;
+                this.$data.lng = value.Lng;
+            }
+        }
+    },
     methods: {
-        updateLocation(location : any) {
-			if (!location || !location.lat || !location.lng) return;
-			let newLocation = new LocationModel();
-			newLocation.Lat = location.lat;
-			newLocation.Lng = location.lng;
+        updateLocation(location: any) {
+            if (!location || !location.lat || !location.lng) return;
+            let newLocation = new LocationModel();
+            newLocation.Lat = location.lat;
+            newLocation.Lng = location.lng;
             this.$emit('updateLocation', newLocation);
         },
     },

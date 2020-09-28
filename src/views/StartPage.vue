@@ -21,7 +21,7 @@ import PlateSpottingsDataProvider from '../dataproviders/PlateSpottingsDataProvi
 import NumberPlate from '../components/NumberPlate.vue';
 
 export default {
-    name: 'Home',
+    name: 'StartPage',
     components: {
         PageLayout,
         PlateSpottingsDataProvider,
