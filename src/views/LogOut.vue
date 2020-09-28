@@ -1,19 +1,22 @@
 <template>
 <page-layout>
     <div slot="main">
-        <h4>Logga ut?</h4>
-        <user-data-provider>
-            <div slot-scope="dataProvider">
-                User: {{dataProvider.user}}
-                <form @submit.prevent="dataProvider.logout">
-                    <div>
-                        <button type="submit">
-                            Logga ut
-                        </button>
+        <div class="columns is-centered mx-4">
+            <div class="column is-6 has-text-centered">
+                <p class="has-text-weight-bold mb-3">Är du säker på att du vill logga ut?</p>
+                <user-data-provider>
+                    <div slot-scope="dataProvider">
+                        <form @submit.prevent="dataProvider.logout">
+                            <div>
+                                <b-button type="is-primary" native-type="submit" rounded>
+                                    Logga ut
+                                </b-button>
+                            </div>
+                        </form>
                     </div>
-                </form>
+                </user-data-provider>
             </div>
-        </user-data-provider>
+        </div>
     </div>
 </page-layout>
 </template>

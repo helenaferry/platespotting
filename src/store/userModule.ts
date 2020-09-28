@@ -22,17 +22,18 @@ const getters = {
 
 const actions = {
 	login({ state, commit }: any, {email, password} : any) {
-		return new Promise((resolve) => {
+		return new Promise((resolve, reject) => {
 			client.post(state.baseBackendUrl+'login', {
 				email: email, password: password
 			}).then((response) => {
 				if (response && response.data) {
-					console.log(response.data);
 					commit('setUser', response.data.user);
 					commit('setAuth', response.data.auth);
 					commit('setToken', response.data.token);
 					resolve();
 				}
+			}).catch((response) => {
+				reject(response);
 			});
 		});
 	},
